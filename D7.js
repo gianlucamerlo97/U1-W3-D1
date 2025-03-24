@@ -40,11 +40,20 @@ console.log(sum);
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
-
+function addNumber(numbers, n) {
+  newArray = numbers.map((numero) => numero + n);
+  return newArray;
+}
+console.log(addNumber([1, 11, 45, 44], 2));
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
+function stringsLength(strings) {
+  lengths = strings.map((string) => string.length);
+  return lengths;
+}
+console.log(stringsLength(["EPICODE", "is", "great"]));
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
@@ -179,3 +188,8 @@ const movies = [
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
+function findMovie(movies, year) {
+  const index = movies.findIndex((movie) => movie.Year === year);
+  console.log(index);
+}
+findMovie(movies, "2019");
